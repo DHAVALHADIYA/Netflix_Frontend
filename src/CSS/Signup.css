@@ -8,10 +8,10 @@
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
+      rgba(0, 0, 0, 0.3) 50%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url("https://thurrott.s3.amazonaws.com/wp-content/uploads/sites/2/2022/01/14172326/netflix.jpg");
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_large.jpg");
   background-size: cover;
   box-shadow: 0 8px #333333;
 }

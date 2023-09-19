@@ -48,7 +48,7 @@ function Signup() {
   };
 
   const handleLogin = () => {
-    Navigate("/login");
+    Navigate("/Login");
   };
 
   // this is used for access the window size dynamically
@@ -160,10 +160,7 @@ function Signup() {
         <div className="mainContainer">
           <h1>Unlimited movies, TV shows and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>
-          <p>
-            Ready to watch? Enter your email to create or restart your
-            membership.
-          </p>
+          <p>Ready to watch? Enter your email to create your membership.</p>
           <div className="sform" style={customStyle}>
             <input
               type="email"
