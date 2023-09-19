@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Login.css";
 import Footer from "../Components/Footer";
-// import axios from 'axios';
+import { api } from "../utils/axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,7 +14,7 @@ function Login() {
     password: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
     setLFormValues((prevValue) => {
       return {
@@ -24,35 +24,35 @@ function Login() {
     });
   };
 
-  const handleLogIn = (e) => {
+  const handleLogIn = async (e) => {
     e.preventDefault();
     if (lformValues.email !== "" && lformValues.password !== "") {
       try {
-        // const response =   axios.post("https://rs-flixbackend.onrender.com/login", lformValues)
-        const response = "";
+        const response = await api.post("/userlogin", lformValues);
+        console.log(response);
         if (response) {
           let status = response.status;
           if (status === 200) {
-            toast.success("Successfully Logged-In");
-            localStorage.setItem("jwtToken", response.data.token, {
-              maxAge: 5 * 24 * 60 * 60,
-            });
+            toast.success("Successfully Login..");
+            localStorage.setItem("usertoken", response.data.token);
             setTimeout(() => {
-              Navigate("/netflixintro");
+              Navigate("/NetflixIntro");
             }, 2000);
+          } else {
+            console.log("null");
           }
+        } else {
+          console.log("sss");
         }
       } catch (err) {
-        if (err) {
-          let status = err.response.status;
-          // message = err.response.data.message;
-          if (status === 503) {
-            toast.error("The server is down, Please try again later");
-          } else if (status === 404) {
-            toast.error("No E-Mail registered with your entered E-Mail");
-          } else {
-            toast.error("Invalid Password");
-          }
+        let status = err.response.status;
+        // message = err.response.data.message;
+        if (status === 503) {
+          toast.error("The server is down, Please try again later");
+        } else if (status === 404) {
+          toast.error("No E-Mail registered with your entered E-Mail");
+        } else {
+          toast.error(err.response.data.message);
         }
       }
     } else {

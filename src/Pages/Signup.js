@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 // usenavigate is only hook which comes from react router dom rather than react
 import { useNavigate } from "react-router-dom";
 // used for http req
-// import axios from "axios";
+import { api } from "../utils/axios";
 // used for validation data of user
 import { userSchema } from "../Validation/userValidation";
 import { ToastContainer, toast } from "react-toastify";
@@ -16,7 +16,7 @@ function Signup() {
 
   // useEffect(() => {
   //   if (localStorage.getItem("usertoken")) {
-  //     Navigate("/NetflixHome");
+  //     Navigate("/NetflixIntro");
   //   } else {
   //     Navigate("/");
   //   }
@@ -111,13 +111,13 @@ function Signup() {
       });
     } else {
       try {
-        // const response = axios.post("",formValues);
-        const response = "";
+        const response = await api.post("/userregister", formValues);
+        // const response = "";
         if (response) {
           let status = response.status;
           if (status === 200) {
             toast.success("User Registered Successfully.. ");
-            // localStorage.setItem("usertoken", response.data.token);
+            localStorage.setItem("usertoken", response.data.token);
             setTimeout(() => {
               Navigate("/NetflixIntro");
             }, 2000);
