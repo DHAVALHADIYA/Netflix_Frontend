@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Login.css";
 import Footer from "../Components/Footer";
@@ -23,6 +23,12 @@ function Login() {
       };
     });
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("usertoken")) {
+      localStorage.removeItem("usertoken");
+    }
+  }, []);
 
   const handleLogIn = async (e) => {
     e.preventDefault();

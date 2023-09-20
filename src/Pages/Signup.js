@@ -46,6 +46,9 @@ function Signup() {
   // this is used for access the window size dynamically
   const [windowSize, setWindowSize] = useState(getWindowSize());
   useEffect(() => {
+    if (localStorage.getItem("usertoken")) {
+      localStorage.removeItem("usertoken");
+    }
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
