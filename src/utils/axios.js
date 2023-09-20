@@ -4,4 +4,8 @@ const api = axios.create({
   baseURL: "http://localhost:5000",
 });
 
-export default api;
+const instance = axios.create({
+  baseURL: "https://api.themoviedb.org/3",
+});
+
+export { api, instance };

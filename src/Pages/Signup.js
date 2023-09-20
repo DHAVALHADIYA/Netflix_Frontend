@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 // usenavigate is only hook which comes from react router dom rather than react
 import { useNavigate } from "react-router-dom";
 // used for http req
-import api from "../utils/axios";
+import { api } from "../utils/axios";
 // used for validation data of user
 import { userSchema } from "../Validation/userValidation";
 import { ToastContainer, toast } from "react-toastify";
@@ -101,7 +101,6 @@ function Signup() {
         }
         return null;
       });
-      
     } else {
       try {
         const response = await api.post("/userregister", formValues);
