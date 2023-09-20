@@ -28,5 +28,3 @@ const requests = {
 }
 
 export default requests;
-
-// https://api.themoviedb.org/3/genre/movie/list?api_key=b28dc611542b54183fe5ac7ee0e09be6&language=en-US -- 19 genres
