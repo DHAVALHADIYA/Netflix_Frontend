@@ -106,7 +106,7 @@ function Signup() {
       });
     } else {
       try {
-        const response = await api.post("/userregister", formValues);
+        const response = await api.post("https://netflix-clone-z1iq.onrender.com/", formValues);
         // const response = "";
         if (response) {
           let status = response.status;
