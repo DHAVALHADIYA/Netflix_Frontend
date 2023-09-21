@@ -49,6 +49,7 @@ function Signup() {
     if (localStorage.getItem("usertoken")) {
       localStorage.removeItem("usertoken");
     }
+
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
@@ -106,7 +107,7 @@ function Signup() {
       });
     } else {
       try {
-        const response = await api.post("https://netflix-clone-z1iq.onrender.com/", formValues);
+        const response = await api.post("/userregister", formValues);
         // const response = "";
         if (response) {
           let status = response.status;
