@@ -26,7 +26,7 @@ function Favourites() {
     if (localStorage.getItem("usertoken")) {
       const fetchMovie = async () => {
         const response = await axios.get(
-          "https://netflix-clone-z1iq.onrender.com/getfav",
+          "https://netflix-clone-backend-0wrj.onrender.com/getfav",
           {
             headers: { Authorization: localStorage.getItem("usertoken") },
           }
@@ -90,7 +90,7 @@ function Favourites() {
   const handleList = async (movie) => {
     try {
       const response = await axios.post(
-        "https://netflix-clone-z1iq.onrender.com/favdlt",
+        "https://netflix-clone-backend-0wrj.onrender.com/favdlt",
         movie,
         {
           headers: { Authorization: localStorage.getItem("usertoken") },

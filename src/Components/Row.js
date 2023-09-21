@@ -75,7 +75,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       console.log(movie);
       try {
         const response = await axios.post(
-          "https://netflix-clone-z1iq.onrender.com/addfav",
+          "https://netflix-clone-backend-0wrj.onrender.com/addfav",
           movie,
           {
             headers: { Authorization: localStorage.getItem("usertoken") },

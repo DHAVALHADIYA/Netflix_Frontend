@@ -36,7 +36,7 @@ function Login() {
     if (lformValues.email !== "" && lformValues.password !== "") {
       try {
         const response = await axios.post(
-          "https://netflix-clone-z1iq.onrender.com/userlogin",
+          "https://netflix-clone-backend-0wrj.onrender.com/userlogin",
           lformValues
         );
         if (response) {

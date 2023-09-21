@@ -109,10 +109,9 @@ function Signup() {
     } else {
       try {
         const response = await axios.post(
-          "https://netflix-clone-z1iq.onrender.com/userregister",
+          "https://netflix-clone-backend-0wrj.onrender.com/userregister",
           formValues
         );
-        // const response = "";
         if (response) {
           let status = response.status;
           if (status === 200) {
