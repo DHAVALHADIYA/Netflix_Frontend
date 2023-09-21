@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Navbar.css";
-import { api } from "../utils/axios";
+// import { api } from "../utils/axios";
+import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,9 +36,13 @@ function Navbar({ isFav }) {
 
   const handleDelete = async () => {
     try {
-      const respone = await api.post("/accountDelete", "", {
-        headers: { Authorization: localStorage.getItem("usertoken") },
-      });
+      const respone = await axios.post(
+        "https://netflix-clone-backend-0wrj.onrender.com/accountDelete",
+        "",
+        {
+          headers: { Authorization: localStorage.getItem("usertoken") },
+        }
+      );
       if (respone) {
         if (respone.data.success === true) {
           toast.success("The account has been deleted successfully");
