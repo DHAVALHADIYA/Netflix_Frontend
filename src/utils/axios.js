@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "https://netflix-clone-z1iq.onrender.com",
 });
 
 const instance = axios.create({
