@@ -114,7 +114,7 @@ function Signup() {
         );
         if (response) {
           let status = response.status;
-          if (status === 200) {
+          if (status === 201) {
             toast.success("User Registered Successfully.. ");
             localStorage.setItem("usertoken", response.data.token);
             setTimeout(() => {
@@ -126,11 +126,11 @@ function Signup() {
         if (err.response) {
           let status = err.response.status;
           if (status === 409) {
-            toast.warn("User Already exist");
+            toast.warn("User Already exist..");
           } else if (status === 503) {
-            toast.error("The server is down. Please Try again later!");
+            toast.error("The server is down. Please Try again later!..");
           } else {
-            toast.error("Error in registering the data");
+            toast.error("Error in registering the data..");
           }
         }
       }
