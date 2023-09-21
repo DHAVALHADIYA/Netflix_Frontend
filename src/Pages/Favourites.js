@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../CSS/Favourite.css";
 import Navbar from "../Components/Navbar";
 import axios from "axios";
-import { api } from "../utils/axios";
+// import { api } from "../utils/axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -25,9 +25,12 @@ function Favourites() {
 
     if (localStorage.getItem("usertoken")) {
       const fetchMovie = async () => {
-        const response = await api.get("/getfav", {
-          headers: { Authorization: localStorage.getItem("usertoken") },
-        });
+        const response = await axios.get(
+          "https://netflix-clone-z1iq.onrender.com/getfav",
+          {
+            headers: { Authorization: localStorage.getItem("usertoken") },
+          }
+        );
 
         console.log(response);
         if (response.data === undefined || response.data.result.length === 0) {
@@ -86,9 +89,13 @@ function Favourites() {
 
   const handleList = async (movie) => {
     try {
-      const response = await api.post("/favdlt", movie, {
-        headers: { Authorization: localStorage.getItem("usertoken") },
-      });
+      const response = await axios.post(
+        "https://netflix-clone-z1iq.onrender.com/favdlt",
+        movie,
+        {
+          headers: { Authorization: localStorage.getItem("usertoken") },
+        }
+      );
       if (response) {
         let status = response.status;
         if (status === 200) {

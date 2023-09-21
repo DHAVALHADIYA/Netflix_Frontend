@@ -4,7 +4,7 @@ import "../CSS/Row.css";
 import YouTube from "react-youtube";
 import axios from "axios";
 
-import { api } from "../utils/axios";
+// import { api } from "../utils/axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -74,9 +74,13 @@ function Row({ title, fetchUrl, isLargeRow }) {
     if (movie) {
       console.log(movie);
       try {
-        const response = await api.post("/addfav", movie, {
-          headers: { Authorization: localStorage.getItem("usertoken") },
-        });
+        const response = await axios.post(
+          "https://netflix-clone-z1iq.onrender.com/addfav",
+          movie,
+          {
+            headers: { Authorization: localStorage.getItem("usertoken") },
+          }
+        );
         console.log(response);
 
         if (response) {

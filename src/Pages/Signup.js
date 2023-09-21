@@ -5,7 +5,8 @@ import Footer from "../Components/Footer";
 // usenavigate is only hook which comes from react router dom rather than react
 import { useNavigate } from "react-router-dom";
 // used for http req
-import { api } from "../utils/axios";
+// import { api } from "../utils/axios";
+import axios from "axios";
 // used for validation data of user
 import { userSchema } from "../Validation/userValidation";
 import { ToastContainer, toast } from "react-toastify";
@@ -107,7 +108,10 @@ function Signup() {
       });
     } else {
       try {
-        const response = await api.post("/userregister", formValues);
+        const response = await axios.post(
+          "https://netflix-clone-z1iq.onrender.com/userregister",
+          formValues
+        );
         // const response = "";
         if (response) {
           let status = response.status;
