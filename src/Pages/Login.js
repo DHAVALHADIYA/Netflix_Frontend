@@ -44,10 +44,10 @@ function Login() {
               Navigate("/NetflixIntro");
             }, 2000);
           } else {
-            console.log("null");
+            // console.log("null");
           }
         } else {
-          console.log("sss");
+          // console.log("sss");
         }
       } catch (err) {
         let status = err.response.status;
