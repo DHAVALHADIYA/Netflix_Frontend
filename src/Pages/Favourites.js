@@ -32,7 +32,6 @@ function Favourites() {
           }
         );
 
-        console.log(response);
         if (response.data === undefined || response.data.result.length === 0) {
           setFavMovie([]);
         } else {
@@ -99,7 +98,6 @@ function Favourites() {
       if (response) {
         let status = response.status;
         if (status === 200) {
-          console.log("sachu");
           toast.success(
             "The movie has been deleted successfully from your favourites"
           );

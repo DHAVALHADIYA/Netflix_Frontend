@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { instance } from "../utils/axios";
+import { instance, api } from "../utils/axios";
 import "../CSS/Row.css";
 import YouTube from "react-youtube";
 import axios from "axios";
@@ -72,7 +72,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   const handleList = async (movie) => {
     if (movie) {
-      console.log(movie);
       try {
         const response = await axios.post(
           "https://netflix-clone-backend-0wrj.onrender.com/addfav",
@@ -81,7 +80,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
             headers: { Authorization: localStorage.getItem("usertoken") },
           }
         );
-        console.log(response);
 
         if (response) {
           let status = response.status;
@@ -89,8 +87,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
             toast.success(
               "The movie has been added to your-favourites successfully"
             );
-          } else {
-            toast.warn("The movie already exist in Favourites");
+          } else if (status === 201) {
+            toast.warn("The movie already exist in Favourites...");
           }
         }
       } catch (err) {

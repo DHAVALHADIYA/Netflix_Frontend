@@ -3,8 +3,10 @@ import "../CSS/Footer.css";
 
 function Footer({ isBottom }) {
   const handleClick = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    window.scroll({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   // this is for getting current year in copyright
@@ -14,7 +16,7 @@ function Footer({ isBottom }) {
   return (
     <footer className={isBottom ? "lfooter" : "sfooter"}>
       <div className="footerContent">
-        <p className={isBottom ? "footerTop2" : "footerTop"}>
+        <p className={isBottom ? "footerTop2" : "footerTop"} id="call">
           Questions? Call{" "}
           <span className="call" onClick={handleClick}>
             000-800-919-1694

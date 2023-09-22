@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../CSS/Login.css";
 import Footer from "../Components/Footer";
+import { userSchema } from "../Validation/userValidation";
 // import { api } from "../utils/axios";
+
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,7 +35,23 @@ function Login() {
 
   const handleLogIn = async (e) => {
     e.preventDefault();
-    if (lformValues.email !== "" && lformValues.password !== "") {
+
+    let validation = await userSchema
+      .validate(lformValues, { abortEarly: false })
+      .catch((response) => {
+        return response;
+      });
+
+    if (validation.inner !== undefined) {
+      validation.inner.map((err) => {
+        if (err.path === "email") {
+          toast.warn(err.message);
+        } else {
+          toast.warn(err.message);
+        }
+        return null;
+      });
+    } else {
       try {
         const response = await axios.post(
           "https://netflix-clone-backend-0wrj.onrender.com/userlogin",
@@ -47,15 +65,10 @@ function Login() {
             setTimeout(() => {
               Navigate("/NetflixIntro");
             }, 2000);
-          } else {
-            // console.log("null");
           }
-        } else {
-          // console.log("sss");
         }
       } catch (err) {
         let status = err.response.status;
-        // message = err.response.data.message;
         if (status === 503) {
           toast.error("The server is down, Please try again later");
         } else if (status === 404) {
@@ -63,13 +76,6 @@ function Login() {
         } else {
           toast.error(err.response.data.message);
         }
-      }
-    } else {
-      if (lformValues.email === "") {
-        toast.warn("Please Enter your E-Mail");
-      }
-      if (lformValues.password === "") {
-        toast.warn("Please Enter your Password");
       }
     }
   };

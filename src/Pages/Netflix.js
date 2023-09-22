@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../CSS/Netflix.css";
 import Navbar from "../Components/Navbar";
 import Banner from "../Components/Banner";
 import Row from "../Components/Row";
 import request from "../utils/request";
+import { useNavigate } from "react-router-dom";
 
 function Netflix() {
+  const Navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("usertoken")) {
+      Navigate("/");
+    }
+  }, [Navigate]);
+
   return (
     <div className="netflix">
       <Navbar isFav={true} />
