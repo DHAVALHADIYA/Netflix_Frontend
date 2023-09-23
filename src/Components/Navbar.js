@@ -35,28 +35,38 @@ function Navbar({ isFav }) {
   };
 
   const handleDelete = async () => {
-    try {
-      const respone = await axios.post(
-        "https://netflix-clone-backend-0wrj.onrender.com/accountDelete",
-        "",
-        {
-          headers: { Authorization: localStorage.getItem("usertoken") },
-        }
-      );
-      if (respone) {
-        if (respone.data.success === true) {
-          toast.success("The account has been deleted successfully");
-          localStorage.removeItem("usetoken");
-          setTimeout(() => {
-            Navigate("/");
-          }, 2000);
-        } else {
-          toast.info(respone.data.nessage);
-        }
+    const olduser = await axios.post(
+      "https://netflix-clone-backend-0wrj.onrender.com/olduser",
+      "",
+      {
+        headers: { Authorization: localStorage.getItem("usertoken") },
       }
-    } catch (error) {
-      if (error.respone.status === 503) {
-        toast.error("The server is down, Please try again later!");
+    );
+
+    if (olduser) {
+      try {
+        const respone = await axios.post(
+          "https://netflix-clone-backend-0wrj.onrender.com/accountDelete",
+          "",
+          {
+            headers: { Authorization: localStorage.getItem("usertoken") },
+          }
+        );
+        if (respone) {
+          if (respone.data.success === true) {
+            toast.success("The account has been deleted successfully");
+            localStorage.removeItem("usetoken");
+            setTimeout(() => {
+              Navigate("/");
+            }, 2000);
+          } else {
+            toast.info(respone.data.nessage);
+          }
+        }
+      } catch (error) {
+        if (error.respone.status === 503) {
+          toast.error("The server is down, Please try again later!");
+        }
       }
     }
   };
