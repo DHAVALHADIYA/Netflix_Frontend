@@ -1,17 +1,14 @@
-/* Main content */
-/* 746px = 100vh for laptop */
 .register {
-  width: 98vw;
-  /* height: 102vh; */
-  height: 765px;
+  width: 100vw;
+  height: 750px;
   position: relative;
   background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.3) 50%,
+      rgb(13, 13, 13) 0%,
+      rgba(17, 17, 17, 0.3) 50%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url("https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    url("../Images/register_bg.jpg");
   background-size: cover;
   box-shadow: 0 8px #333333;
 }
@@ -27,7 +24,7 @@
   height: 2.8rem;
 }
 
-.signupButton {
+.loginbtn {
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -415,7 +412,7 @@
     height: 1.5rem;
   }
 
-  .signupButton {
+  .loginbtn {
     padding: 0.3rem 0.8rem 0.5rem 0.8rem;
     font-size: 0.8rem;
   }
@@ -540,7 +537,7 @@
     height: 1.2rem;
   }
 
-  .signupButton {
+  .loginbtn {
     padding: 0.3rem 0.8rem 0.5rem 0.8rem;
     font-size: 0.8rem;
   }

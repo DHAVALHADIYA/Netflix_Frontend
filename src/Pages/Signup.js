@@ -12,6 +12,14 @@ import { userSchema } from "../Validation/userValidation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import logo from "../Images/netflix_logo.png";
+import tv from "../Images/tv.png";
+import tv_video from "../Images/tv_video.m4v";
+import part2 from "../Images/part2.jpg";
+import part3 from "../Images/part3.png";
+import saif from "../Images/saif.m4v";
+import part4 from "../Images/part4.png";
+
 function Signup() {
   const Navigate = useNavigate();
 
@@ -142,13 +150,10 @@ function Signup() {
       <div className="register">
         <div className="top">
           <div className="simageContainer">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/330px-Netflix_2015_logo.svg.png"
-              alt="Netflix Logo"
-            />
+            <img src={logo} alt="Netflix Logo" />
           </div>
           <button
-            className="signupButton"
+            className="loginbtn"
             onClick={handleLogin}
             style={{ width: "8rem", borderRadius: "1rem" }}
           >
@@ -158,8 +163,8 @@ function Signup() {
 
         <div className="mainContainer">
           <h1>Unlimited movies, TV shows and more.</h1>
-          <h2>Watch anywhere. Cancel anytime.</h2>
-          <p>Ready to watch? Enter your email to create your membership.</p>
+          <h2>Watch Movies Trailer Now.</h2>
+          <p>Ready to watch? Enter your email to create your account.</p>
           <div className="sform" style={customStyle}>
             <input
               type="email"
@@ -205,16 +210,10 @@ function Signup() {
           </p>
         </div>
         <div className="boxImg">
-          <img
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
-            alt="Gif1"
-          />
+          <img src={tv} alt="Gif1" />
           <div className="videoClass">
             <video className="netflixVideo" autoPlay playsInline muted loop>
-              <source
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
-                type="video/mp4"
-              />
+              <source src={tv_video} type="video/mp4" />
             </video>
           </div>
         </div>
@@ -222,10 +221,7 @@ function Signup() {
 
       <div className="part2">
         <div className="boxImg">
-          <img
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-            alt="Gif1"
-          />
+          <img src={part2} alt="Gif1" />
         </div>
         <div className="talk">
           <h1>Download your shows to watch offline.</h1>
@@ -242,16 +238,10 @@ function Signup() {
           </p>
         </div>
         <div className="boxImg">
-          <img
-            src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
-            alt="Gif1"
-          />
+          <img src={part3} alt="Gif1" />
           <div className="videoClass2">
             <video className="netflixVideo" autoPlay playsInline muted loop>
-              <source
-                src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
-                type="video/mp4"
-              />
+              <source src={saif} type="video/mp4" />
             </video>
           </div>
         </div>
@@ -259,10 +249,7 @@ function Signup() {
 
       <div className="part2">
         <div className="boxImg">
-          <img
-            src="https://occ-0-3061-2186.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABYjXrxZKtrzxQRVQNn2aIByoomnlbXmJ-uBy7du8a5Si3xqIsgerTlwJZG1vMpqer2kvcILy0UJQnjfRUQ5cEr7gQlYqXfxUg7bz.png?r=420"
-            alt="Gif1"
-          />
+          <img src={part4} alt="Gif1" />
         </div>
         <div className="talk">
           <h1>Create profiles for children.</h1>

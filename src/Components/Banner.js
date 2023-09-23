@@ -79,7 +79,7 @@ function Banner() {
 
             <div className="banner_buttons">
               <button
-                className="banner_button"
+                className="top_banner_button"
                 onClick={() => handlePlay(movie)}
               >
                 {trailerUrl ? "◼ \u00A0 Stop" : "▶ \u00A0 Play"}
