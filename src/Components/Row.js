@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { instance, api } from "../utils/axios";
+import { instance } from "../utils/axios";
 import "../CSS/Row.css";
 import YouTube from "react-youtube";
 import axios from "axios";
@@ -15,19 +15,29 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
   const [hover, sethover] = useState(false);
-  // const [addFavId, setFavId] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
 
   // A snippet of code which runs based on a specific conditions
   useEffect(() => {
-    // if [], run once when the row loads and dont run again. if we pass the movies inside the [] then it will run all time when movies changes. Here we only want change when row loads up.
-    // Also we have to make the function call asynchronous because we are making a request to third party web i.e. TMDB so sometime the response can be two three second late.
     async function fetchData() {
-      const request = await instance.get(fetchUrl);
-      setMovies(request.data.results);
-      return request;
+      setLoading(true); // Start loading
+      try {
+        // if [], run once when the row loads and dont run again. if we pass the movies inside the [] then it will run all time when movies changes. Here we only want change when row loads up.
+        // Also we have to make the function call asynchronous because we are making a request to third party web i.e. TMDB so sometime the response can be two three second late.
+        const request = await instance.get(`${fetchUrl}&page=${page}`);
+        setMovies((prevMovies) => [...prevMovies, ...request.data.results]);
+      } catch (error) {
+        console.error("Error fetching movies:", error);
+      }
+      setLoading(false); // Finish loading
     }
     fetchData();
-  }, [fetchUrl]);
+  }, [fetchUrl, page]);
+
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1); // Load more movies when user scrolls
+  };
 
   // This is for Youtube video.
   const opts = {
@@ -144,6 +154,8 @@ function Row({ title, fetchUrl, isLargeRow }) {
           );
         })}
       </div>
+      {loading && <p>Movie Fetching...</p>}
+      {!loading && <button onClick={handleLoadMore}></button>}
       {trailerUrl ? <YouTube videoId={trailerUrl} opts={opts} /> : null}
       <ToastContainer position="bottom-right" theme="colored" />
     </div>

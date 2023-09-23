@@ -17,10 +17,12 @@ function Favourites() {
   const [trailerUrl, setTrailerUrl] = useState("");
   const [hover, sethover] = useState(false);
   const [deleteMovie, setDeleteMovie] = useState(false);
+  const [isFetching, setIsFetching] = useState(true);
 
   useEffect(() => {
     if (!localStorage.getItem("usertoken")) {
       Navigate("/Login");
+      return;
     }
 
     if (localStorage.getItem("usertoken")) {
@@ -38,12 +40,13 @@ function Favourites() {
           setFavMovie(response.data.result[0].movie);
         }
 
+        setIsFetching(false);
         deleteMovie && setDeleteMovie(false);
         return response;
       };
       fetchMovie();
     }
-  }, [deleteMovie]);
+  }, [deleteMovie, Navigate]);
 
   const opts = {
     height: "390",
@@ -116,7 +119,9 @@ function Favourites() {
     <div>
       <Navbar isFav={false} />
       <div className="favHeading">
-        {favMovie === undefined || favMovie.length === 0 ? (
+        {isFetching ? (
+          <h1>Movies Fetching...</h1>
+        ) : favMovie === undefined || favMovie.length === 0 ? (
           <h1>Favourite List is Empty</h1>
         ) : (
           <h1>Favourite List</h1>
