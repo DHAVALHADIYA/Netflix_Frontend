@@ -65,15 +65,15 @@ function Banner() {
     return (
       <>
         <header
-          className="banner"
+          className="top_banner"
           style={{
             backgroundImage: `url("https://image.tmdb.org/t/p/original${movie?.backdrop_path}")`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
           }}
         >
-          <div className="banner_contents">
-            <h1 className="banner_title">
+          <div className="banner_content">
+            <h1 className="top_banner_title">
               {movie?.title || movie?.name || movie?.original_name}
             </h1>
 
@@ -84,19 +84,19 @@ function Banner() {
               >
                 {trailerUrl ? "◼ \u00A0 Stop" : "▶ \u00A0 Play"}
               </button>
-              <button className="banner_button" onClick={handleInfo}>
+              <button className="top_banner_button" onClick={handleInfo}>
                 🛈 &nbsp; Info
               </button>
             </div>
 
             {info ? (
-              <h1 className="banner_description">
+              <h1 className="top_banner_description">
                 {truncate(movie?.overview, 150)}
               </h1>
             ) : null}
           </div>
 
-          <div className="banner_fadeBottom" />
+          <div className="top_banner_fadeBottom" />
         </header>
         {trailerUrl ? <YouTube videoId={trailerUrl} opts={opts} /> : null}
       </>

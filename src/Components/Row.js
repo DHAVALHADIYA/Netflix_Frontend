@@ -155,7 +155,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
         })}
       </div>
       {loading && <p>Movie Fetching...</p>}
-      {!loading && <button onClick={handleLoadMore}></button>}
+      {!loading && (
+        <button onClick={handleLoadMore} style={{ display: "none" }}></button>
+      )}
       {trailerUrl ? <YouTube videoId={trailerUrl} opts={opts} /> : null}
       <ToastContainer position="bottom-right" theme="colored" />
     </div>
