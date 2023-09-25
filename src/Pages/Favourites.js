@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "../CSS/Favourite.css";
+import "../CSS/Favourite.css";
 import Navbar from "../Components/Navbar";
 import axios from "axios";
 // import { api } from "../utils/axios";

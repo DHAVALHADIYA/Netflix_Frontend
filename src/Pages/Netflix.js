@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-// import "../CSS/Netflix.css";
+import "../CSS/Netflix.css";
 import Navbar from "../Components/Navbar";
 import Banner from "../Components/Banner";
 import Row from "../Components/Row";
@@ -16,7 +16,7 @@ function Netflix() {
   }, [Navigate]);
 
   return (
-    <div className="netflix">
+    <div className="flix">
       <Navbar isFav={true} />
       <Banner />
       <Row

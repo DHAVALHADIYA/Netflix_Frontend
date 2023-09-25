@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../CSS/Navbar.css";
+import "../CSS/Navbar.css";
 // import { api } from "../utils/axios";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import navbar_logo from "../Images/login_logo.png";
 import "react-toastify/dist/ReactToastify.css";
 
 function Navbar({ isFav }) {
@@ -72,22 +73,22 @@ function Navbar({ isFav }) {
   };
 
   return (
-    <div className={`nav ${show || !isFav ? "nav_black" : null}`}>
+    <div className={`navbar ${show || !isFav ? "navbar_black" : null}`}>
       <img
-        className="nav_logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/330px-Netflix_2015_logo.svg.png"
+        className="navbar_logo"
+        src={navbar_logo}
         alt="Netflix Logo"
         onClick={() => {
           Navigate("/netflixintro");
         }}
       />
-      <div className="nav_container" onClick={handleClick}>
-        <button type="button" className="nav_button">
+      <div className="navbar_container" onClick={handleClick}>
+        <button type="button" className="navbar_button">
           ☰
         </button>
       </div>
 
-      <div className={`nav_dropdown ${click && "show"}`}>
+      <div className={`navbar_dropdown ${click && "navshow"}`}>
         <ul>
           <li
             onClick={() => {

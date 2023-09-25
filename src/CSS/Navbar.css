@@ -1,0 +1,82 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    height: 30px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    transition-timing-function: ease-in;
+    transition: all 0.5s;
+}
+
+.navbar_black {
+    background-color: #111;
+}
+
+.navbar_logo {
+    position: fixed;
+    left: 20px;
+    width: 90px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.navbar_container {
+    position: fixed;
+    display: inline-block;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    transition: transform 450ms;
+}
+
+.navbar_button {
+    padding: 0;
+    width: 100%;
+    height: 85%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: #e50914;
+    cursor: pointer;
+    outline: 0;
+    font-size: 23px;
+}
+
+.navbar_dropdown {
+    position: absolute;
+    top: 75%;
+    right: 60px;
+    width: 150px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navshow {
+    height: 120px;
+    opacity: 1;
+}
+
+.navbar_dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar_dropdown li {
+    background-color: rgba(12, 12, 12, 0.75);
+    padding: 8px 12px;
+    border: 1px solid rgba(136, 136, 136, 0.4);
+}
+
+.navbar_dropdown li:hover {
+    background-color: rgb(56, 55, 55);
+    cursor: pointer;
+}

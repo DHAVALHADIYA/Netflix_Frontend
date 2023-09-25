@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import "../CSS/Login.css";
+import "../CSS/Login.css";
 import Footer from "../Components/Footer";
 import { userSchema } from "../Validation/userValidation";
+import loginlogo from "../Images/login_logo.png";
 // import { api } from "../utils/axios";
 
 import axios from "axios";
@@ -82,18 +83,18 @@ function Login() {
 
   return (
     <div className="logincontainer">
-      <div className="login">
-        <div className="ltop">
+      <div className="login_box">
+        <div className="login_box_1">
           <div className="limageContainer">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/330px-Netflix_2015_logo.svg.png"
+              src={loginlogo}
               alt="Netflix Logo"
             />
           </div>
         </div>
 
-        <div className="lmainContainer">
-          <div className="lform">
+        <div className="Container">
+          <div className="lform_login">
             <h1 style={{ textAlign: "center", width: "100%" }}>Login</h1>
             <input
               type="email"
@@ -110,7 +111,7 @@ function Login() {
               value={lformValues.password}
               onChange={handleChange}
             />
-            <button onClick={handleLogIn} className="loginButton">
+            <button onClick={handleLogIn} className="loginbtn">
               Login
             </button>
 

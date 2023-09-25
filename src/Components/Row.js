@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { instance } from "../utils/axios";
-// import "../CSS/Row.css";
+import "../CSS/Row.css";
 import YouTube from "react-youtube";
 import axios from "axios";
 
@@ -26,11 +26,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
         // if [], run once when the row loads and dont run again. if we pass the movies inside the [] then it will run all time when movies changes. Here we only want change when row loads up.
         // Also we have to make the function call asynchronous because we are making a request to third party web i.e. TMDB so sometime the response can be two three second late.
         const request = await instance.get(`${fetchUrl}&page=${page}`);
-        setMovies((prevMovies) => [
-          ...prevMovies,
-          ...request.data.results,
-        ]);
-
+        setMovies((prevMovies) => [...prevMovies, ...request.data.results]);
       } catch (error) {
         console.error("Error fetching movies:", error);
       }
@@ -117,16 +113,16 @@ function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   return (
-    <div className="row">
+    <div className="row_data">
       <h2>{title}</h2>
-      <div className="rowPosters">
+      <div className="rowpos">
         {movies.map((movie, index) => {
           return (
             <>
               <img
                 onClick={() => handleClick(movie)}
                 key={index}
-                className={`${isLargeRow ? "rowPosterLarge" : "rowPoster"}`}
+                className={`${isLargeRow ? "rowPoslarge" : "rowPoster"}`}
                 src={`${baseurl}${
                   isLargeRow
                     ? movie.poster_path

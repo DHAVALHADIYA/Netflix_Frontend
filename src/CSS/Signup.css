@@ -1,0 +1,640 @@
+.register_page {
+  width: 98vw;
+  height: 750px;
+  position: relative;
+  background: linear-gradient(
+      to bottom,
+      rgb(13, 13, 13) 0%,
+      rgba(17, 17, 17, 0.3) 50%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("../Images/register_bg.jpg");
+  background-size: cover;
+  box-shadow: 0 8px #3a3939;
+}
+
+.top_part {
+  padding: 40px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top_part .container img {
+  height: 2.8rem;
+}
+
+.login_btn {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-color: #f00c17;
+  border: none;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.main_con {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.main_con h1 {
+  max-width: 800px;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.main_con h2 {
+  font-size: 1.625rem;
+  max-width: 640px;
+  margin: 10px;
+  text-align: center;
+}
+
+.main_con p {
+  font-size: 1.45rem;
+  text-align: center;
+}
+
+.uform {
+  margin-top: 15px;
+  height: 60px;
+  border-radius: 5px;
+  text-align: center;
+  max-width: 900px;
+}
+
+.uform input {
+  outline: none;
+  height: 96%;
+  padding: 0 10px;
+  border: 1px solid #8c8c8c;
+  border-radius: 2px;
+  color: black;
+  font-size: 16px;
+}
+
+.uform .getStartedButton {
+  margin-left: 1px;
+  height: 100%;
+  background-image: linear-gradient(180deg, #e50914, #db0510);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 45%);
+  color: #fff;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0 10px;
+}
+
+.signupbtn {
+  position: relative;
+  top: 20px;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.part1,
+.part2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 8px #333333;
+
+  padding: 2rem 5rem;
+  height: 55vh;
+}
+
+.talk {
+  width: 40%;
+}
+
+.talk h1 {
+  font-size: 3.3rem;
+  line-height: 55px;
+  position: relative;
+  bottom: 20px;
+}
+
+.talk p {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+
+.boxImg {
+  position: relative;
+  width: 45%;
+  z-index: -1;
+}
+
+.boxImg img {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.boxImg .videoClass {
+  height: 100%;
+  left: 49.5%;
+  max-height: 54%;
+  max-width: 73%;
+  position: absolute;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.videoClass2 {
+  height: 100%;
+  left: 50%;
+  max-height: 47%;
+  max-width: 63%;
+  position: absolute;
+  top: 34%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.netflixVideo {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* Faqs Section styling */
+.containerFaqs {
+  box-shadow: 0 8px #333333;
+}
+
+.faqs {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.faqs h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 3rem;
+  padding: 3rem 0 2rem 0;
+}
+
+.list {
+  width: 900px;
+  max-width: 80vw;
+  cursor: pointer;
+}
+
+.title {
+  position: relative;
+  background: #303030;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: none;
+  margin-bottom: 6px;
+}
+
+.icon {
+  background: none;
+  color: #fff;
+  border: none;
+  width: 20px;
+  position: relative;
+  font-size: 2.5rem;
+  position: relative;
+  transition: 0.5s linear;
+  cursor: pointer;
+}
+
+.faqAnswer {
+  margin-top: -4px;
+  background: #303030;
+  line-height: 35px;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 400;
+  padding: 20px 30px;
+  margin-bottom: 6px;
+}
+
+.main_part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 250px;
+}
+
+.main_part p {
+  font-size: 1.45rem;
+  text-align: center;
+}
+
+.signupbtn2 {
+  position: relative;
+  top: 20px;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  border-radius: 0.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+/* responsive for main content */
+@media only screen and (max-width: 1450px) and (min-width: 950px) {
+  .register_page {
+    height: 85vh;
+  }
+
+  .top_part .container img {
+    height: 2.25rem;
+  }
+
+  .main_con h1 {
+    font-size: 3.125rem;
+    max-width: 640px;
+  }
+}
+
+@media only screen and (max-width: 950px) and (min-width: 740px) {
+  .register_page {
+    height: 687px;
+  }
+}
+
+@media screen and (max-width: 740px) and (min-width: 550px) {
+  .register_page {
+    height: 657px;
+  }
+}
+
+/* ================== */
+@media screen and (max-width: 740px) {
+  .main_con p {
+    font-size: 18px;
+  }
+
+  .main_part p {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 950px) and (min-width: 550px) {
+  .top_part .container img {
+    height: 2rem;
+  }
+
+  .main_con h1 {
+    font-size: 3.125rem;
+    max-width: 640px;
+  }
+
+  .main_con p {
+    max-width: 450px;
+    padding: 0 10%;
+  }
+
+  .uform input {
+    height: 100%;
+  }
+
+  .uform .getStartedButton {
+    width: 56%;
+    height: 40%;
+    margin: 30px auto;
+  }
+
+  .signupbtn {
+    top: 40px;
+  }
+
+  .part1 {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 450px;
+  }
+
+  .part2 {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 450px;
+  }
+
+  .talk {
+    width: 85%;
+  }
+
+  .talk h1 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    position: relative;
+    bottom: 0.5rem;
+  }
+
+  .talk p {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  .boxImg {
+    width: 50%;
+  }
+
+  .faqs {
+    width: 85%;
+  }
+
+  .faqs h1 {
+    font-size: 2.5rem;
+  }
+
+  .main_part p {
+    max-width: 450px;
+    padding: 0 10%;
+  }
+
+  .signupbtn2 {
+    top: 40px;
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (min-width: 350px) and (max-width: 550px) {
+  .register_page {
+    height: 485px;
+  }
+
+  .top_part .container img {
+    height: 1.5rem;
+  }
+
+  .login_btn {
+    padding: 0.3rem 0.8rem 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .main_con h1 {
+    font-size: 1.75rem;
+    max-width: 80%;
+  }
+
+  .main_con h2 {
+    font-size: 1.125rem;
+  }
+
+  .main_con p {
+    padding: 0 5%;
+  }
+
+  .uform input {
+    height: 100%;
+    position: relative;
+    left: -11px;
+  }
+
+  .uform .getStartedButton {
+    position: relative;
+    top: 12px;
+    left: -11px;
+    width: 60%;
+    height: 50%;
+    margin-top: 15px;
+    font-size: 16px;
+    margin: 15px auto;
+  }
+
+  .signupbtn {
+    top: 20px;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .part1 {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 50vh;
+  }
+
+  .part2 {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 50vh;
+  }
+
+  .talk {
+    width: 85%;
+  }
+
+  .talk h1 {
+    font-size: 1.625rem;
+    line-height: 1.1;
+    position: relative;
+    bottom: 0.5rem;
+  }
+
+  .talk p {
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+
+  .boxImg {
+    width: 50%;
+  }
+
+  .faqs {
+    width: 90%;
+  }
+
+  .faqs h1 {
+    font-size: 1.625rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .faqAnswer {
+    font-size: 1.1rem;
+    line-height: 30px;
+    padding: 10px 30px;
+  }
+
+  .main_part p {
+    padding: 0 5%;
+  }
+
+  .signupbtn2 {
+    top: 20px;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .register_page {
+    height: 485px;
+  }
+
+  .top_part {
+    padding: 20px 30px;
+  }
+  .top_part .container img {
+    height: 1.2rem;
+  }
+
+  .login_btn {
+    padding: 0.3rem 0.8rem 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .main_con h1 {
+    font-size: 1.75rem;
+    max-width: 80%;
+  }
+
+  .main_con h2 {
+    font-size: 1.125rem;
+  }
+
+  .main_con p {
+    padding: 0 5%;
+  }
+
+  .uform input {
+    height: 100%;
+    position: relative;
+    left: -35px;
+  }
+
+  .uform .getStartedButton {
+    position: relative;
+    top: 12px;
+    left: -35px;
+    width: 50%;
+    height: 50%;
+    margin-top: 12px;
+    font-size: 14px;
+    margin: 15px auto;
+  }
+
+  .signupbtn {
+    top: 15px;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .part1 {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 35vh;
+  }
+
+  .part2 {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    height: 35vh;
+  }
+
+  .talk {
+    width: 85%;
+  }
+
+  .talk h1 {
+    font-size: 1.325rem;
+    line-height: 1.1;
+    position: relative;
+    bottom: 0.5rem;
+  }
+
+  .talk p {
+    font-size: 0.925rem;
+    font-weight: 300;
+  }
+
+  .boxImg {
+    width: 50%;
+  }
+
+  .faqs {
+    width: 90%;
+  }
+
+  .faqs h1 {
+    font-size: 1.625rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .faqAnswer {
+    font-size: 0.9rem;
+    line-height: 25px;
+    padding: 10px 20px;
+  }
+
+  .main_part p {
+    padding: 0 5%;
+  }
+
+  .signupbtn2 {
+    top: 15px;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.6rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-// import "../CSS/Footer.css";
+import "../CSS/Footer.css";
 
 function Footer({ isBottom }) {
   const handleClick = () => {
@@ -14,79 +14,79 @@ function Footer({ isBottom }) {
   const year = date.getFullYear();
 
   return (
-    <footer className={isBottom ? "lfooter" : "sfooter"}>
-      <div className="footerContent">
-        <p className={isBottom ? "footerTop2" : "footerTop"} id="call">
-          Questions? Call{" "}
-          <span className="call" onClick={handleClick}>
+    <footer className={isBottom ? "nn_footer" : "n_footer"}>
+      <div className="f_content">
+        <p className={isBottom ? "f_top2" : "f_top"} id="calling">
+          Questions? call{" "}
+          <span className="calling" onClick={handleClick}>
             000-800-919-1694
           </span>
         </p>
-        <ul className="footer">
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+        <ul className="f_foot">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               FAQ
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Help Centre
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Terms of Use
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Privacy
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Corporate Information
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Only on Netflix
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Account
             </div>
           </li>
-          <li className="footerLinkItem">
-            <div onClick={handleClick} className="footerLink">
+          <li className="footitem">
+            <div onClick={handleClick} className="footlink">
               Contact Us
             </div>
           </li>
           {isBottom ? null : (
-            <li className="footerLinkItem">
-              <div onClick={handleClick} className="footerLink">
+            <li className="footitem">
+              <div onClick={handleClick} className="footlink">
                 Media Centre
               </div>
             </li>
           )}
           {isBottom ? null : (
-            <li className="footerLinkItem">
-              <div onClick={handleClick} className="footerLink">
+            <li className="footitem">
+              <div onClick={handleClick} className="footlink">
                 Ways to Watch
               </div>
             </li>
           )}
           {isBottom ? null : (
-            <li className="footerLinkItem">
-              <div onClick={handleClick} className="footerLink">
+            <li className="footitem">
+              <div onClick={handleClick} className="footlink">
                 Speed Test
               </div>
             </li>
           )}
           {isBottom ? null : (
-            <li className="footerLinkItem">
-              <div onClick={handleClick} className="footerLink">
+            <li className="footitem">
+              <div onClick={handleClick} className="footlink">
                 Legal Notices
               </div>
             </li>
@@ -94,7 +94,7 @@ function Footer({ isBottom }) {
         </ul>
       </div>
 
-      <div className="copyright">
+      <div className="copy">
         <p>© {year}, Netflix.com, Inc. or its affiliates</p>
       </div>
     </footer>

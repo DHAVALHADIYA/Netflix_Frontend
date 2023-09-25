@@ -1,0 +1,184 @@
+.login_box {
+  width: 98vw;
+  min-height: 95%;
+  position: relative;
+  background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0.5) 0%,
+      rgba(33, 33, 33, 0.5) 100%
+    ),
+    url("../Images/login_bg.jpg");
+  background-size: cover;
+}
+
+.login_box_1 {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login_box_1 .Container img {
+  height: 2.5rem;
+}
+
+.Container {
+  height: 650px;
+  width: 420px;
+  margin: 0 auto;
+  top: 10vh;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(10, 9, 9, 0.6);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.lform_login {
+  width: 85%;
+  height: 580px;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.lform_login h1 {
+  position: relative;
+  left: 1vw;
+}
+
+.lform_login input {
+  box-sizing: border-box;
+  background-color: #333333;
+  color: white;
+  border-radius: 5px;
+  width: 95%;
+  border: none;
+  outline: none;
+  height: 55px;
+  margin: -10px auto;
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.lform_login button {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 50px;
+  width: 95%;
+  margin: 15px auto;
+}
+
+.lform_login .checkbox {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  accent-color: #333333;
+  top: -33px;
+  left: 0.5vw;
+}
+
+.lform_login p {
+  position: relative;
+  top: -75px;
+  left: 30px;
+  color: #fff;
+}
+
+.lform_login span {
+  position: relative;
+  left: 0.5vw;
+  top: -45px;
+  color: gray;
+}
+
+.lform_login span b {
+  color: #fff;
+  cursor: pointer;
+}
+
+.lform_login small {
+  position: relative;
+  left: 0.5vw;
+  top: -70px;
+  max-width: 80%;
+}
+
+.lform_login small b Link {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+b:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 740px) {
+  .login_box {
+    height: 1120px;
+  }
+}
+
+@media only screen and (min-width: 740px) and (min-height: 1120px) {
+  .login_box {
+    height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .login_box {
+    background: rgba(0, 0, 0, 1);
+    min-height: 100%;
+  }
+
+  .Container {
+    margin-top: -4vh;
+    width: 100%;
+    height: 790px;
+  }
+
+  .lform_login h1 {
+    left: -1vw;
+  }
+
+  .lform_login input {
+    width: 100%;
+    height: 50px;
+  }
+
+  .lform_login button {
+    width: 100%;
+    height: 50px;
+  }
+
+  .lform_login span {
+    top: -10vh;
+  }
+
+  .lform_login small {
+    top: -13vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .login_box_1 {
+    padding: 20px 20px;
+  }
+  .login_box_1 .Container img {
+    height: 1rem;
+  }
+  .Container {
+    margin-top: -7vh;
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import "../CSS/Signup.css";
+import "../CSS/Signup.css";
 import Footer from "../Components/Footer";
 // now a day usenavigate is replace with usehistory
 // usenavigate is only hook which comes from react router dom rather than react
@@ -147,13 +147,13 @@ function Signup() {
 
   return (
     <>
-      <div className="register">
-        <div className="top">
-          <div className="simageContainer">
+      <div className="register_page">
+        <div className="top_part">
+          <div className="container">
             <img src={logo} alt="Netflix Logo" />
           </div>
           <button
-            className="loginbtn"
+            className="login_btn"
             onClick={handleLogin}
             style={{ width: "8rem", borderRadius: "1rem" }}
           >
@@ -161,11 +161,11 @@ function Signup() {
           </button>
         </div>
 
-        <div className="mainContainer">
+        <div className="main_con">
           <h1>Unlimited movies, TV shows and more.</h1>
           <h2>Watch Movies Trailer Now.</h2>
           <p>Ready to watch? Enter your email to create your account.</p>
-          <div className="sform" style={customStyle}>
+          <div className="uform" style={customStyle}>
             <input
               type="email"
               placeholder="Email-Addres"
@@ -194,7 +194,7 @@ function Signup() {
             ) : null}
           </div>
           {showPassword ? (
-            <button className="sFormSigUpButton" onClick={handleSignIn}>
+            <button className="signupbtn" onClick={handleSignIn}>
               Sign-Up
             </button>
           ) : null}
@@ -370,12 +370,12 @@ function Signup() {
           </div>
         </div>
 
-        <div className="mainContainer2">
+        <div className="main_part">
           <p>
             Ready to watch? Enter your email to create or restart your
             membership.
           </p>
-          <div className="sform" style={customStyle}>
+          <div className="uform" style={customStyle}>
             <input
               type="email"
               placeholder="Email-Addres"
@@ -403,7 +403,7 @@ function Signup() {
             ) : null}
           </div>
           {showPassword ? (
-            <button className="sFormSigUpButton2" onClick={handleSignIn}>
+            <button className="signupbtn2" onClick={handleSignIn}>
               Sign-Up
             </button>
           ) : null}

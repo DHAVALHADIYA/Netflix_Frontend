@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Netflix_Video from "../Images/NetflixIntro.mp4";
-// import "../CSS/NetflixIntro.css";
+import "../CSS/NetflixIntro.css";
 
 function NetflixIntro() {
   const Navigate = useNavigate();
