@@ -1,23 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
-import NetflixIntro from "./Pages/NetflixIntro";
-import Netflix from "./Pages/Netflix";
-import Favourites from "./Pages/Favourites";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<Signup />} />
-          <Route exact path="/Login" element={<Login />} />
-          <Route exact path="/NetflixIntro" element={<NetflixIntro />} />
-          <Route exact path="/Netflix" element={<Netflix />} />
-          <Route exact path="/Favourites" element={<Favourites />} />
-        </Routes>
-      </Router>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
