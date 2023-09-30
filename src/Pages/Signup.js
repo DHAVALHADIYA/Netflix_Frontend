@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 // usenavigate is only hook which comes from react router dom rather than react
 import { useNavigate } from "react-router-dom";
 // used for http req
-// import { api } from "../utils/axios";
+import { api } from "../utils/axios";
 import axios from "axios";
 // used for validation data of user
 import { userSchema } from "../Validation/userValidation";
@@ -116,14 +116,13 @@ function Signup() {
       });
     } else {
       try {
-        const response = await axios.post(
-          "https://netflix-clone-backend-0wrj.onrender.com/userregister",
-          formValues
-        );
+        const response = await api.post("/userregister", formValues);
         if (response) {
+          console.log(response);
           let status = response.status;
           if (status === 201) {
-            toast.success("User Registered Successfully.. ");
+            toast.success(response.data.message);
+            console.log(response.data.message);
             localStorage.setItem("usertoken", response.data.token);
             setTimeout(() => {
               Navigate("/NetflixIntro");
