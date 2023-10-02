@@ -76,11 +76,7 @@ function Netflix() {
         title="Crime Movies"
         fetchUrl={request.fetchCrimeMovies}
       />
-      <Row
-        name="Drama"
-        title="Drama Movies"
-        fetchUrl={request.fetchDramaMovies}
-      />
+
       <Row
         name="Family"
         title="Family Movies"
@@ -91,11 +87,7 @@ function Netflix() {
         title="Fantasy Movies"
         fetchUrl={request.fetchFantasyMovies}
       />
-      <Row
-        name="History"
-        title="History Movies"
-        fetchUrl={request.fetchHistoryMovies}
-      />
+
       <Row
         name="Music"
         title="Music Movies"
@@ -106,11 +98,7 @@ function Netflix() {
         title="Mystery Movies"
         fetchUrl={request.fetchMysteryMovies}
       />
-      <Row
-        name="Science-Fiction"
-        title="Science Fiction Movies"
-        fetchUrl={request.fetchScienceFictionMovies}
-      />
+
       <Row name="TV-Movie" title="TV Movies" fetchUrl={request.fetchTVMovies} />
       <Row
         name="Thriller"

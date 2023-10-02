@@ -52,7 +52,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
       setTrailerUrl("");
     } else {
       const query = movie?.name || movie?.title || movie?.original_title;
-      const key = "AIzaSyCI_ZeQHva1fiUyzl7DAfZ_IFjryk7Dspc";
+      const key = "AIzaSyCVjGMn2htrmAmqiqoEIWxn2z5YrxHnxBc";
       const url =
         "https://youtube.googleapis.com/youtube/v3/search?type=video&q=" +
         query +
@@ -118,39 +118,42 @@ function Row({ title, fetchUrl, isLargeRow }) {
       <div className="rowpos">
         {movies.map((movie, index) => {
           return (
-            <>
-              <img
-                onClick={() => handleClick(movie)}
-                key={index}
-                className={`${isLargeRow ? "rowPoslarge" : "rowPoster"}`}
-                src={`${baseurl}${
-                  isLargeRow
-                    ? movie.poster_path
-                    : movie.backdrop_path || movie.poster_path
-                }`}
-                alt={movie?.name}
-              />
-              <div
-                className="fav_button"
-                onClick={() => handleButton(index)}
-                key={index + 1}
-              >
-                <button className="fav" key={movie.id}>
-                  ⋮
-                </button>
-                {hover && index === clickIndex ? (
+            <React.Fragment key={index}>
+              {movie && (
+                <>
+                  <img
+                    onClick={() => handleClick(movie)}
+                    className={`${isLargeRow ? "rowPoslarge" : "rowPoster"}`}
+                    src={`${baseurl}${
+                      isLargeRow
+                        ? movie.poster_path
+                        : movie.backdrop_path || movie.poster_path
+                    }`}
+                    alt={movie?.name}
+                  />
                   <div
-                    className="fav_dropdown"
-                    key={index}
-                    onClick={() => handleList(movie)}
+                    className="fav_button"
+                    onClick={() => handleButton(index)}
+                    key={index + 1}
                   >
-                    <ul key={index}>
-                      <li key={index}>Add to favourites</li>
-                    </ul>
+                    <button className="fav" key={movie.id}>
+                      ⋮
+                    </button>
+                    {hover && index === clickIndex ? (
+                      <div
+                        className="fav_dropdown"
+                        key={index}
+                        onClick={() => handleList(movie)}
+                      >
+                        <ul key={index}>
+                          <li key={index}>Add to favourites</li>
+                        </ul>
+                      </div>
+                    ) : null}
                   </div>
-                ) : null}
-              </div>
-            </>
+                </>
+              )}
+            </React.Fragment>
           );
         })}
       </div>
